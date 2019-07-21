@@ -55,7 +55,7 @@ void dispatch_queue_wait(dispatch_queue_t *queue)
 Waits (blocks) until all tasks on the queue have completed. If new tasks are added to the queue
 after this is called they are ignored.
 
-##Main idea
+## Main idea
 I used a linked list queue for this Queue. Here is how the assignment works.
 First, I created a function called dispatch_queue_create to assign head, tail pointer and queue type to the queue. This program fires up a number of threads according to the thread demand. If this queue is a serial queue, it only fires up one thread and only one task will be grabbed frome the queue, otherwise it fires up the number of threads equals to the number of cores and multiple tasks are executed at the same time.The p_thread_create function invokes a task runner function by passing in parameter queue.
 
